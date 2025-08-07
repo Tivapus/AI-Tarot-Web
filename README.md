@@ -1,42 +1,38 @@
 # 🔮 AI Tarot Web
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Build Status](https://img.shields.io/github/actions/workflow/status/Tivapus/AI-Tarot-Web/deploy.yml?branch=main)](https://github.com/Tivapus/AI-Tarot-Web/actions)
 
-An interactive web application for AI-powered Tarot card readings. This project combines a modern frontend built with Next.js, a robust Go backend, and the power of Google's Gemini API to deliver insightful and personalized interpretations of your tarot spreads.
-
-![AI Tarot Screenshot](https://raw.githubusercontent.com/Tivapus/AI-Tarot-Web/main/screenshot.png)
-
-> _Note: I've added a path for a screenshot. Please add a file named `screenshot.png` to your main branch for it to display correctly._
+เว็บแอปพลิเคชันสำหรับดูไพ่ทาโรต์แบบอินเทอร์แอคทีฟ **หัวใจสำคัญของโปรเจกต์นี้คือการเป็นพื้นที่สำหรับฝึกฝนการเขียน AI Prompts** และการสร้างฟีเจอร์ AI บนเว็บไซต์จริง โดยใช้ Next.js เป็น Frontend และเชื่อมต่อกับ Google Gemini API เพื่อสร้างคำทำนายที่ลึกซึ้งและเป็นส่วนตัว
 
 ## ✨ Features
 
-- **Interactive Card Deck:** Shuffle and draw cards with a smooth, beautifully animated interface.
-- **Multiple Spread Types:** Choose from different reading types (e.g., single card, three-card spread).
-- **AI-Powered Interpretations:** Ask a specific question and receive a detailed interpretation of your chosen cards, powered by the Google Gemini API.
-- **Responsive Design:** A seamless experience on both desktop and mobile devices.
-- **Modern Tech Stack:** Built with performance, scalability, and developer experience in mind.
+- **AI-Generated Artwork:** รูปภาพการ์ดและพื้นหลังทั้งหมดในเว็บสร้างขึ้นโดย AI 🎨
+- **Interactive Card Deck:** สับและเลือกไพ่ด้วยอนิเมชันที่สวยงามและลื่นไหล
+- **Reading History:** บันทึกประวัติการดูดวงที่ผ่านมา โดยใช้ `localStorage` ของเบราว์เซอร์
+- **Multiple Reading Modes:**
+  - **Daily Life:** ทำนายเรื่องราวชีวิตประจำวัน (เลือก 3 ใบ)
+  - **Yes / No:** สำหรับคำถามที่ต้องการคำตอบใช่หรือไม่ (เลือก 1 ใบ)
+  - **AI Mode:** (อยู่ระหว่างการพัฒนา) ในปัจจุบันโหมดนี้จะนำทางไปยังโหมดอื่น ๆ แต่เป็นโหมดหลักที่จะพัฒนาฟีเจอร์ AI ที่ซับซ้อนยิ่งขึ้นในอนาคต
+- **AI-Powered Interpretations:** รับคำทำนายที่สร้างโดย AI จากไพ่ที่คุณเลือกและคำถามที่คุณป้อนเข้าไป
 
 ## 🛠️ Tech Stack
 
-This project is a full-stack application composed of two main services.
+โปรเจกต์นี้เป็น Frontend Application ที่เรียกใช้ Gemini API โดยตรง
 
-| Service      | Technology                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| Category     | Technology                                                                                                                                                                                                                                                                                                                                                                                                                    |
 | ------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Frontend** | ![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white) ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB) ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white) ![MUI](https://img.shields.io/badge/MUI-007FFF?style=for-the-badge&logo=mui&logoColor=white) |
-| **Backend**  | ![Go](https://img.shields.io/badge/Go-00ADD8?style=for-the-badge&logo=go&logoColor=white)                                                                                                                                                                                                                                                                                                                                     |
 | **AI**       | ![Google Gemini](https://img.shields.io/badge/Gemini_API-4285F4?style=for-the-badge&logo=google&logoColor=white)                                                                                                                                                                                                                                                                                                              |
-| **DevOps**   | ![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white) ![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white)                                                                                                                                                                                           |
 
 ## 🚀 Getting Started
 
-You can get a local copy up and running by following these simple steps. This project is fully containerized with Docker for easy setup.
+คุณสามารถติดตั้งและรันโปรเจกต์บนเครื่องของคุณได้ง่ายๆ ตามขั้นตอนต่อไปนี้
 
 ### Prerequisites
 
 - [Git](https://git-scm.com/)
-- [Docker](https://www.docker.com/products/docker-desktop/) and [Docker Compose](https://docs.docker.com/compose/)
-- A **Google Gemini API Key**. You can get one from [Google AI Studio](https://aistudio.google.com/app/apikey).
+- [Node.js](https://nodejs.org/en) (เวอร์ชัน 18.x หรือสูงกว่า)
+- **Google Gemini API Key** สามารถขอรับได้ที่ [Google AI Studio](https://aistudio.google.com/app/apikey)
 
 ### Installation & Setup
 
@@ -44,82 +40,55 @@ You can get a local copy up and running by following these simple steps. This pr
 
     ```bash
     git clone [https://github.com/Tivapus/AI-Tarot-Web.git](https://github.com/Tivapus/AI-Tarot-Web.git)
-    cd AI-Tarot-Web
+    cd AI-Tarot-Web/ai-tarot-frontend
     ```
 
-2.  **Configure Environment Variables:**
-    There are two services that need environment variables. Create a `.env` file in each directory.
-
-    - **Backend (`ai-tarot-backend/`)**
-      Create a file named `.env` inside the `ai-tarot-backend` directory:
-
-      ```bash
-      touch ai-tarot-backend/.env
-      ```
-
-      Add your Gemini API key to this file:
-
-      ```env
-      # ai-tarot-backend/.env
-      GEMINI_API_KEY=your_google_gemini_api_key_here
-      ```
-
-    - **Frontend (`ai-tarot-frontend/`)**
-      Create a file named `.env.local` inside the `ai-tarot-frontend` directory:
-      ```bash
-      touch ai-tarot-frontend/.env.local
-      ```
-      Add the backend API URL. When running with Docker Compose, the service name `ai-tarot-backend` acts as the hostname.
-      ```env
-      # ai-tarot-frontend/.env.local
-      NEXT_PUBLIC_API_BASE_URL=http://localhost:8080/api
-      ```
-
-3.  **Build and Run with Docker Compose:**
-    From the root directory of the project, run the following command:
+2.  **Install dependencies:**
+    ใช้ Package Manager ที่คุณถนัด (npm, yarn, or pnpm)
 
     ```bash
-    docker-compose up --build
+    npm install
+    # or
+    yarn install
+    # or
+    pnpm install
     ```
 
-    This command will build the Docker images for both the frontend and backend and start the services.
+3.  **Configure Environment Variables:**
+    สร้างไฟล์ `.env.local` ที่ root ของโปรเจกต์ (`ai-tarot-frontend/`)
 
-4.  **Access the Application:**
-    - Frontend (Next.js): [http://localhost:3000](http://localhost:3000)
-    - Backend (Go): [http://localhost:8080](http://localhost:8080)
+    ```bash
+    touch .env.local
+    ```
+
+    จากนั้นเพิ่ม Gemini API Key ของคุณลงในไฟล์:
+
+    ```env
+    # .env.local
+    NEXT_PUBLIC_GEMINI_API_KEY=your_google_gemini_api_key_here
+    ```
+
+4.  **Run the development server:**
+
+    ```bash
+    npm run dev
+    ```
+
+5.  **Access the Application:**
+    เปิดเบราว์เซอร์แล้วไปที่ [http://localhost:3000](http://localhost:3000)
 
 ## 🕹️ Usage
 
-1.  Navigate to the homepage at [http://localhost:3000](http://localhost:3000).
-2.  Select the type of reading you want (e.g., 1-card or 3-card spread).
-3.  Enter the question you want to ask the cards.
-4.  Click the "Shuffle" button to shuffle the deck.
-5.  Select the required number of cards from the fanned deck.
-6.  Once you've made your selections, you will be taken to the results page to see the AI-generated interpretation of your reading.
-
-## 🔌 API Endpoints
-
-The Go backend exposes the following REST API endpoint:
-
-- **`POST /api/interpret`**
-  - Receives a user's question and the names of the selected cards, and returns an AI-generated interpretation from the Gemini API.
-  - **Request Body:**
-    ```json
-    {
-      "question": "What should I focus on in my career?",
-      "cards": ["The Magician", "The Sun", "Temperance"]
-    }
-    ```
-  - **Success Response (200 OK):**
-    ```json
-    {
-      "interpretation": "The combination of The Magician, The Sun, and Temperance suggests..."
-    }
-    ```
+1.  ไปที่หน้าแรก [http://localhost:3000](http://localhost:3000)
+2.  เลือกโหมดการดูดวงที่ต้องการ (Daily Life หรือ Yes/No)
+3.  ใส่คำถามที่ต้องการทราบ
+4.  กดปุ่ม "Shuffle" เพื่อสับไพ่
+5.  เลือกไพ่ตามจำนวนที่โหมดนั้นๆ กำหนด
+6.  ระบบจะแสดงหน้าผลลัพธ์พร้อมคำทำนายจาก AI
 
 ## 🤝 Contributing
 
-Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/Tivapus/AI-Tarot-Web/issues).
+เรายินดีต้อนรับทุกการสนับสนุน ไม่ว่าจะเป็นการแจ้ง Issues, การเสนอ Feature ใหม่ๆ หรือการส่ง Pull Request
 
 1.  Fork the Project
 2.  Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
