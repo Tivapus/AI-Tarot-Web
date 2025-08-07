@@ -3,10 +3,9 @@
 import { BackGround } from '@/styles/BackGround.styled';
 import Deck from '@/components/Deck';
 import { tarotDeck } from '@/TarotDeck';
-import { DefaultMenuWrapContainer, HeaderText } from '@/styles/Shared.styled';
+import { DefaultMenuWrapContainer, FooterTextBox, FooterTextStyle, HeaderText } from '@/styles/Shared.styled';
 import { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
-import FooterText from '@/components/FooterText';
 import { useTarot } from '@/contexts/TarotContext.context';
 import OnProcessNavBar from '@/components/OnProcessNavBar';
 
@@ -38,10 +37,12 @@ export default function HomePage() {
     <BackGround style={{height:'100vh'}}>
       <OnProcessNavBar/>
       <DefaultMenuWrapContainer>
-        <HeaderText style={{paddingTop:'64px'}}>🔮 Tarot 🔮</HeaderText>
+        <HeaderText style={{paddingTop:'32px'}}>🔮 Tarot 🔮</HeaderText>
         <Deck cards={DeckTarot} numPicks={numCard}/>
       </DefaultMenuWrapContainer>
-      <FooterText/>
+      <FooterTextBox style={{paddingTop:'49px'}}>
+          <FooterTextStyle>เว็บไซต์นี้จัดทำขึ้นเพื่อการศึกษาเท่านั้น โปรดใช้วิจารณญาณในการใช้งาน | by MOCHA 2025</FooterTextStyle>
+      </FooterTextBox>
     </BackGround>
   );
 }

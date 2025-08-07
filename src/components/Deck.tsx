@@ -52,9 +52,9 @@ export default function ArcDeck({ cards, numPicks }: ArcDeckProps) {
     return (
         <>
             <DeckWrapper>
-                <DeckTitle style={{top: '40px'}}>Thinking about your question</DeckTitle>
-                {question && <DeckTitle style={{ top: '100px', fontSize: '24px' }}>: {question} ?</DeckTitle>}
-                <DeckTitle style={{ top: '140px', fontSize: '50px' }}>Select {count} cards</DeckTitle>
+                <DeckTitle style={{top: '0%'}}>Thinking about your question</DeckTitle>
+                {question && <DeckTitle style={{ top: '8%', fontSize: '24px' }}>: {question} ?</DeckTitle>}
+                <DeckTitle style={{ top: '15%', fontSize: '50px' }}>Select {count} cards</DeckTitle>
                 {(numPicks === count) && !shuffling && (
                     <Button
                         onClick={() => {
@@ -62,7 +62,7 @@ export default function ArcDeck({ cards, numPicks }: ArcDeckProps) {
                             shuffle(cards);
                             setTimeout(() => setShuffling(false), 1200);
                         }}
-                        style={{ top: '220px', position: 'absolute', left: '50%', transform: 'translateX(-50%)', background: '#FFFFFF' }}
+                        style={{ top: '32%', position: 'absolute', left: '50%', transform: 'translateX(-50%)', background: '#FFFFFF' }}
                     >
                         🔁 Shuffle
                     </Button>

@@ -50,6 +50,8 @@ export const FooterTextBox = styled('div')`
     gap: 10px;
     left: 0;
     bottom: 0;
-    position: fixed;
-    padding: 16px;
+    padding-left:16px;
+    padding-right:16px;
+    padding-top:16px;
+    padding-bottom: 16px;
 `;

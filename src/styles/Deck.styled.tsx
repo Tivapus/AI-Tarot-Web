@@ -1,12 +1,16 @@
 import { styled } from '@mui/material/styles';
 
 export const DeckWrapper = styled('div')`
-    position: relative;
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  position: relative;
+  width: 100%;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow-bottom: hidden;
+  padding: 1rem;
+  box-sizing: border-box;
 `;
 
 export const DeckTitle = styled('div')`
@@ -22,9 +26,10 @@ export const DeckTitle = styled('div')`
 export const CardWrapper = styled('div')`
   position: absolute;
   width: 120px;
-  height: 200px;
-  transform-origin: center;
-  transition: transform 0.3s;
+  height: 250px;
+  transform-origin: center bottom;
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);;
+  
 
   &.orbit {
     animation: orbitAnim 1.4s ease-in-out forwards;
